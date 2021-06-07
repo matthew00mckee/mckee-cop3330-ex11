@@ -18,8 +18,13 @@ public class CurrencyExcange {
         String ratestr= input.next();
         double rate = Double.parseDouble(ratestr);
 
+        //gives us the correct value for dollars and round up all partial pennies
         double dollars = Math.round(euros * rate* 100.0)/100.0;
+        if (euros*rate > dollars){
+            dollars = dollars +0.01;
+        }
 
+        //single printline
         System.out.print(euros + " euros at and exchange rate of "+ rate+ " is\n"
                 + dollars + " US Dollars");
     }
